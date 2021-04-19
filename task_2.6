@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Введите значение для переменной a: ");
+        int a = scan.nextInt();
+        System.out.print("Введите значение для переменной b: ");
+        int b = scan.nextInt();
+
+        if (a%b <= 0) {
+            System.out.println("Делится,"+"  a/b = "+ a/b);
+        }else{
+            System.out.println("Не делится,"+ "a%b = "+a%b); }
+
+        }
+    }
+    
+    
+    или
+    
+    
+    public class Main {
+    public static void main(String[] args) {
+        int a = 9;
+        int b = 5;
+        if (a%b <= 0) {
+            System.out.println("Делится,"+"  a/b = "+ a/b);
+        }else{
+            System.out.println("Не делится,"+ "a%b = "+a%b); }
+
+    }
+}

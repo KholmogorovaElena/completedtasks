@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int n = in.nextInt();
+        boolean result = isNotSimple(n);
+        System.out.print(result);
+        in.close();
+    }
+    public static boolean isNotSimple(int n) {
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

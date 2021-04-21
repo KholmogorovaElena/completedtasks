@@ -1,0 +1,163 @@
+package familyTree;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Person elena = new Person ("Елена", 95, null, null);
+        Person ivan = new Person ("Иван", 95, null, null);
+        Person irina = new Person ("Ирина", 93, null, null);
+        Person petr = new Person ("Пётр", 97, null, null);
+        Person katya = new Person ("Екатерина", 89, null, null);
+        Person denis = new Person ("Денис", 88, null, null);
+        Person margarita = new Person ("Маргарита", 91, null, null);
+        Person stanislav = new Person ("Станислав", 87, null, null);
+        Person anatoliy = new Person ("Анатолий", 91, null, null);
+        Person maria = new Person ("Мария", 91, null, null);
+        Person oksana = new Person ("Оксана", 90, null, null);
+        Person pavel = new Person ("Павел", 95, null,null);
+        Person ruslan = new Person ("Руслан", 92, null, null);
+        Person svetlana = new Person ("Светлана", 85, null, null);
+        Person sergey = new Person ("Сергей", 88, null, null);
+        Person diana = new Person ("Диана", 86, null, null);
+        Person polina = new Person ("Полина", 68, irina, petr);
+        Person georgiy = new Person ("Георгий", 71, elena, ivan);
+        Person fedor = new Person ("Фёдор", 70, katya, denis);
+        Person anna = new Person ("Анна", 67, margarita, stanislav);
+        Person marina = new Person ("Марина", 69, diana, sergey);
+        Person roman = new Person("Роман", 68, svetlana, ruslan);
+        Person zina = new Person ("Зинаида", 66, oksana, pavel);
+        Person evgeniy = new Person ("Евгений", 66, maria, anatoliy);
+        Person liza = new Person ("Елизавета", 45, anna, fedor);
+        Person vladimir = new Person ("Владимир", 48, polina, georgiy);
+        Person gena = new Person ( "Гена", 44, zina, evgeniy);
+        Person nina = new Person("Нина", 42, marina,roman);
+        Person oleg = new Person("Олег",25,liza,vladimir);
+        Person olga = new Person("Ольга",23,nina,gena);
+        Person igor = new Person("Игорь",5,olga,oleg);
+     igor.getInfo();
+    }
+}
+
+class Person{
+    private String name;
+    private int age;
+    private Person mother;
+    private Person father;
+
+    public Person(String name, int age, Person mother, Person father) {
+        this.name = name;
+        this.age = age;
+        this.mother = mother;
+        this.father = father;
+    }
+    public void getInfo(){
+        String info= "Меня зовут "+this.name+"\n";
+        if(this.mother != null){
+            info += "Мою маму зовут "+this.mother.name+"\n"; // info = info + "Мою маму...";
+            if(this.father != null){
+                info += "Моего папу зовут "+this.father.name+"\n";
+            }
+            if (this.mother.mother != null){
+                info += "Бабушка по маме "+this.mother.mother.name+"\n";
+            }
+        }
+        if(this.mother.father != null){
+            info += "Дедушка по маме "+this.mother.father.name+"\n";
+        }
+
+        if(this.father.mother != null){
+            info += "Бабушка по папе "+this.father.mother.name+"\n";
+        }
+        if(this.father.father != null){
+            info += "Дедушка по папе "+this.father.father.name+"\n";
+        }
+
+        if (this.mother.mother.mother != null){
+            info += "Прабабушка по маминой линии (бабушка моей мамы по её маме) "+this.mother.mother.mother.name+"\n";
+        }
+        if (this.mother.mother.father != null){
+            info += "Прадедушка по маминой линии (дедушка моей мамы по её маме) "+this.mother.mother.father.name+"\n";
+        }
+        if (this.mother.father.mother != null){
+            info += "Прабабушка по маминой линии (бабушка моей мамы по её папе) "+this.mother.father.mother.name+"\n";
+        }
+        if (this.mother.father.father != null){
+            info += "Прадедушка по маминой линии (дедушка моей мамы по её папе) "+this.mother.father.father.name+"\n";
+        }
+        if (this.father.mother.mother != null){
+            info += "Прабабушка по папиной линии (бабушка моего папы по его маме) "+this.father.mother.mother.name+"\n";
+        }
+        if (this.father.mother.father != null){
+            info += "Прадедушка по папиной линии (дедушка моего папы по его маме) "+this.father.mother.father.name+"\n";
+        }
+        if (this.father.father.mother != null){
+            info += "Прабабушка по папиной линии (бабушка моего папы по его папе) "+this.father.father.mother.name+"\n";
+        }
+        if (this.father.father.father != null){
+            info += "Прадедушка по папиной линии (дедушка моего папы по его папе) "+this.father.father.father.name+"\n";
+        }
+        if (this.father.father.father.mother != null){
+            info += "Моя прапрабабушка по папиной линии (бабушка моего дедушки по его папе) "+this.father.father.father.mother.name+"\n";
+        }
+        if (this.father.father.father.father != null){
+            info += "Мой прапрадедушка по папиной линии (дедушка моего дедушки по его папе) "+this.father.father.father.father.name+"\n";
+        }
+        if (this.father.father.mother.father != null){
+            info += "Мой прапрадедушка по папиной линии (дедушка моего дедушки по его маме) "+this.father.father.mother.father.name+"\n";
+        }
+        if (this.father.father.mother.mother != null){
+            info += "Моя прапрабабушка по папиной линии (бабушка моего дедушки по его маме) "+this.father.father.mother.mother.name+"\n";
+        }
+        if (this.father.mother.mother.mother != null){
+            info += "Моя прапрабабушка по папиной линии (бабушка моей бабушки по её маме) "+this.father.mother.mother.mother.name+"\n";
+        }
+        if (this.father.mother.mother.father != null){
+            info += "Мой прапрадедушка по папиной линии (дедушка моей бабушки по её маме) "+this.father.mother.mother.father.name+"\n";
+        }
+        if (this.father.mother.father.mother != null){
+            info += "Моя прапрабабушка по папиной линии (бабушка моей бабушки по её папе) "+this.father.mother.father.mother.name+"\n";
+        }
+        if (this.father.mother.father.father != null){
+            info += "Мой прапрадедушка по папиной линии (дедушка моей бабушки по её папе) "+this.father.mother.father.father.name+"\n";
+        }
+        if (this.mother.mother.mother.mother != null){
+            info += "Моя прапрабабушка по маминой линии (бабушка моей бабушки по её маме) "+this.mother.mother.mother.mother.name+"\n";
+        }
+        if (this.mother.mother.mother.father != null){
+            info += "Мой прапрадедушка по маминой линии (дедушка моей бабушки по её маме) "+this.mother.mother.mother.father.name+"\n";
+        }
+        if (this.mother.mother.father.mother != null){
+            info += "Моя прапрабабушка по маминой линии (бабушка моей бабушки по её папе) "+this.mother.mother.father.mother.name+"\n";
+        }
+        if (this.mother.mother.father.father != null){
+            info += "Мой прапрадедушка по маминой линии (дедушка моей бабушки по её папе) "+this.mother.mother.father.father.name+"\n";
+        }
+        if (this.mother.father.father.father != null){
+            info += "Мой прапрадедушка по маминой линии (дедушка моего дедушки по его папе) "+this.mother.father.father.father.name+"\n";
+        }
+        if (this.mother.father.father.mother != null){
+            info += "Моя прапрабабушка по маминой линии (бабушка моего дедушки по его папе) "+this.mother.father.father.mother.name+"\n";
+        }
+        if (this.mother.father.mother.mother != null){
+            info += "Моя прапрабабушка по маминой линии (бабушка моего дедушки по его маме) "+this.mother.father.mother.mother.name+"\n";
+        }
+        if (this.mother.father.mother.father != null){
+            info += "Мой прапрадедушка по маминой линии (дедушка моего дедушки по его маме) "+this.mother.father.mother.father.name+"\n";
+        }
+        System.out.println(info);
+    }
+
+    public Person getMother() {
+        return mother;
+    }
+    public Person getFather() {
+        return father;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}

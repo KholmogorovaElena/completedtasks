@@ -1,0 +1,15 @@
+public class Main {
+        public static void main(String[] args) {
+                int[] nums = {50, 50, 20, 25, 30, 35};
+                try {
+                        for (int i = 0; i < nums.length; i++) {
+                                        if (nums[i] == nums[i + 1]) {
+                                                System.out.println("Да");
+                                        } else {
+                                                System.out.println("Нет");
+                                        }
+                                }
+                } catch (Exception exception) { }
+
+        }
+}

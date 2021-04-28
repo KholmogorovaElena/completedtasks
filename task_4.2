@@ -1,0 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+       Dog dog = new Dog();
+        dog.setName("Тотошка");
+        dog.setAge(5);
+        System.out.println( "Мою собаку зовут " +dog.getName()+"."+" Ему "+dog.getAge()+" лет." );
+    }
+}
+
+class Dog extends Main {
+    private String name;
+private int age;
+
+    public  void setName(String catName) {
+name = catName;
+
+    }
+    public String getName () {
+        return name;
+    }
+
+    public  void setAge(int dogAge) {
+        age = dogAge;
+    }
+    public int getAge () {
+        return age;
+    }
+
+}

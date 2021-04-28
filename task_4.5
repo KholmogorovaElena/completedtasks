@@ -1,0 +1,47 @@
+public class Main {
+    public static void main(String[] args) {
+Horse spirit =  new Horse("Спирит", 5, "арабская лошадь", "черный");
+Pegasus ivi = new Pegasus ("Иви", 12, "мистическая", "фиолетовый");
+spirit.run();
+ivi.fly();
+    }
+}
+
+ abstract class Animal {
+    String name;
+    int age;
+    public Animal (String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+}
+
+ class Horse extends Animal {
+     String breed;
+     String color;
+
+     public Horse(String name, int age, String breed, String color) {
+         super(name, age);
+         this.breed = breed;
+         this.color = color;
+     }
+
+     public void run() {
+         System.out.println(this.name+": Игого, я поскакал(а)");
+
+
+     }
+ }
+
+class Pegasus extends Horse {
+
+    public Pegasus(String name, int age, String breed, String color) {
+        super(name, age, breed, color);
+
+    }
+
+    public void fly() {
+         System.out.println(this.name+": Игого, я полетел(а)");
+    }
+}

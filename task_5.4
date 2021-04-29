@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main
+{
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String fileName = reader.readLine();
+        reader = new BufferedReader(new InputStreamReader((new FileInputStream(fileName))));
+        ArrayList<Integer> noms = new ArrayList<Integer>();
+        while (reader.ready()) {
+            int n = Integer.parseInt(reader.readLine());
+            if (n % 2 == 0) {
+                noms.add(n);
+            }
+        }
+        reader.close();
+        Collections.sort(noms);
+
+        for (int i : noms) {
+            System.out.println(i);
+        }
+
+    }
+}

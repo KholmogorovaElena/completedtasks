@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Map<String, String> inform = new HashMap<>();
+        while (true)
+        {
+            String city = scanner.nextLine();
+            if (city.isEmpty()) break;
+            String family = scanner.nextLine();
+            if (family.isEmpty()) break;
+
+            inform.put(city, family);
+        }
+        System.out.println("Введите город");
+        String cityName = scanner.nextLine();
+
+
+        System.out.println(inform.get(cityName));
+        
+    }
+}
